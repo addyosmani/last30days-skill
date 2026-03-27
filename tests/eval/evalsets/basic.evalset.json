@@ -1,0 +1,48 @@
+{
+  "eval_set_id": "basic_eval",
+  "name": "Basic last30days Agent Evaluation",
+  "eval_cases": [
+    {
+      "eval_id": "greeting",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [{"text": "Hello, what can you help me with?"}]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "last30days",
+        "user_id": "eval_user"
+      }
+    },
+    {
+      "eval_id": "research_query",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [{"text": "What are people saying about React Server Components?"}]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "last30days",
+        "user_id": "eval_user"
+      }
+    },
+    {
+      "eval_id": "specific_source",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [{"text": "Search Reddit for discussions about Rust vs Go"}]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "last30days",
+        "user_id": "eval_user"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "criteria": {
+    "rubric_based_final_response_quality_v1": {
+      "threshold": 0.8,
+      "judgeModelOptions": {
+        "judgeModel": "gemini-2.5-flash",
+        "numSamples": 1
+      },
+      "rubrics": [
+        {
+          "rubricId": "relevance",
+          "rubricContent": {
+            "textProperty": "The response directly addresses the user's research query and provides relevant information from the requested sources."
+          }
+        },
+        {
+          "rubricId": "source_attribution",
+          "rubricContent": {
+            "textProperty": "The response cites specific platforms (Reddit, X, YouTube, etc.) and includes links or identifiers where available."
+          }
+        },
+        {
+          "rubricId": "summary_quality",
+          "rubricContent": {
+            "textProperty": "The response provides a clear, well-organized summary highlighting key themes, sentiment, and notable discussions."
+          }
+        }
+      ]
+    }
+  }
+}
