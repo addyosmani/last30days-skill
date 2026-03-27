@@ -34,6 +34,12 @@ for t in "${TARGETS[@]}"; do
     rsync -a "$SRC/fixtures/" "$t/fixtures/"
   fi
 
+  # ADK agent module
+  if [ -d "$SRC/app" ]; then
+    mkdir -p "$t/app"
+    rsync -a "$SRC/app/"*.py "$t/app/"
+  fi
+
   # Count and report
   mod_count=$(ls "$t/scripts/lib/"*.py 2>/dev/null | wc -l | tr -d ' ')
   echo "  Copied $mod_count modules"
