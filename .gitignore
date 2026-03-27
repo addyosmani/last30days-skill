@@ -15,3 +15,9 @@ variants/open/references/research.md
 __pycache__/
 *.pyc
 mise.toml
+
+# ADK / Python
+.env
+.venv/
+uv.lock
+*.egg-info/

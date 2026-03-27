@@ -1,0 +1,46 @@
+[project]
+name = "last30days-agent"
+version = "0.1.0"
+description = "ADK agent for multi-source research across Reddit, X, YouTube, Hacker News & web"
+requires-python = ">=3.10,<3.14"
+license = "MIT"
+dependencies = [
+    "google-adk>=1.15.0,<2.0.0",
+    "google-cloud-aiplatform>=1.130.0",
+    "google-cloud-logging>=3.12.0,<4.0.0",
+    "google-auth>=2.0.0",
+    "opentelemetry-instrumentation-google-genai>=0.1.0,<1.0.0",
+    "fastapi>=0.115.8,<1.0.0",
+    "uvicorn~=0.34.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.23.8",
+    "nest-asyncio>=1.6.0",
+    "ruff>=0.4.6",
+]
+eval = [
+    "google-adk[eval]>=1.15.0,<2.0.0",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.agent-starter-pack]
+name = "last30days-agent"
+base_template = "adk"
+agent_directory = "app"
+deployment_target = "cloud_run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
